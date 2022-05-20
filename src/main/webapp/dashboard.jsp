@@ -1,13 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
 </head>
 <body>
     <div class = "container">
@@ -41,7 +39,5 @@
                 </table>
             </div>
     </div>
-
-
 </body>
 </html>

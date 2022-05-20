@@ -3,7 +3,7 @@ package util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Db {
+public class DB {
     String driver = "com.mysql.jdbc.Driver";
     String url = "jdbc:mysql://localhost:3306/technical_support";
     String userName = "root";
