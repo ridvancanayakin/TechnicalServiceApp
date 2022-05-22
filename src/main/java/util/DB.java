@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DB {
-    String driver = "com.mysql.jdbc.Driver";
+    String driver = "com.mysql.cj.jdbc.Driver";
     String url = "jdbc:mysql://localhost:3306/technical_support";
     String userName = "root";
     String password = "";

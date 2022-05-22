@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         String remember = req.getParameter("remember");
         if(userModel.userLogin(email, password, remember, req, resp)){
-            resp.sendRedirect(Const.base+"dashboard.jsp");
+            resp.sendRedirect(Const.base+"item");
         }else{
             req.setAttribute("error","E-mail and password doesn't match to any account.");
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
