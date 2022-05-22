@@ -23,7 +23,28 @@ public class ItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Session session = sf.openSession();
-        List<Item> items = session.createQuery("from Item ").getResultList();
+
+        //check if there is an updated item
+        String iid = req.getParameter("iid");
+        if( iid != null ){
+            try{
+                int itemId = Integer.parseInt(iid);
+                Transaction transaction = session.beginTransaction();
+                Item item = session.load(Item.class, itemId);
+                if ( req.getParameter("archive") != null ) {
+                    item.setStatus(Const.Status.ARCHIVED);
+                    session.update(item);
+                } else {
+                    session.delete(item);
+                }
+
+                transaction.commit();
+            } catch ( Exception e ){
+
+            }
+        }
+        // get the item list
+        List<Item> items = session.createQuery("FROM Item WHERE status != 'ARCHIVED' and status != 'DELETEDs'").getResultList();
         req.setAttribute("items", items);
         session.close();
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/dashboard.jsp");
