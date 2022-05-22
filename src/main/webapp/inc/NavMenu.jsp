@@ -38,9 +38,8 @@
         </ul>
     </div>
     <div class="col">
-        <button class="btn btn-danger " href=<%=%>Const.base%>userLogout>Log Out</button>
+        <a href="<%=Const.base%>userLogout" class="btn btn-danger">Log Out</a>
     </div>
-
 </div>
 
 
